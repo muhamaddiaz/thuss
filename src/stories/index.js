@@ -4,15 +4,21 @@ import '../index.css';
 import { storiesOf } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
 
+import styled from 'styled-components'
+
 import { Welcome } from '@storybook/react/demo';
 import {Navbar, MyProfile, NavbarStatus, NavbarPeople} from '../components/Navbar'
-import QuickAction from '../components/QuickAction'
+import {QuickAction, QuickActionText} from '../components/QuickAction'
 import Drafts from '../components/Drafts'
 import CreateArticle from '../components/CreateArticle';
 import Tags from '../components/Tags';
 import MyArticles from '../components/MyArticles';
 import ProfilePill from '../components/ProfilePill';
 import ActivityLog from '../components/ActivityLog';
+
+const StoriesContainer = styled.div`
+  padding: 30px;
+`
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -22,7 +28,9 @@ storiesOf('Navbar', module)
   .add('to NavbarStatus', () => (<NavbarStatus />))
   .add('to NavbarPeople', () => (<NavbarPeople />))
 
-storiesOf('Quick Action', module).add('to QuickAction', () => (<QuickAction />))
+storiesOf('Quick Action', module)
+  .add('to QuickAction', () => (<StoriesContainer><QuickAction /></StoriesContainer>))
+  .add('to QuickActionText', () => (<StoriesContainer><QuickActionText /></StoriesContainer>))
 
 storiesOf('Drafts', module).add('to Drafts', () => (<Drafts />))
 

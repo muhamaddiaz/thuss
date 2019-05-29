@@ -6,7 +6,7 @@ import Image1 from '../assets/img/person-1.jpg'
 const NavbarStyle = styled.nav`
   display: flex;
   justify-content: space-between;
-  box-shadow: 0 0 10px grey;
+  box-shadow: 0 0 5px grey;
   padding: 10px 20px;
   margin: 10px;
   border-radius: 15px;
@@ -100,19 +100,13 @@ const RoundImage = styled.div`
 export class Navbar extends Component {
   render() {
     return (
-      <NavbarContainer />
+      <NavbarStyle>
+        <MyProfile />
+        <NavbarStatus />
+        <NavbarPeople />
+      </NavbarStyle>
     )
   }
-}
-
-function NavbarContainer() {
-  return (
-    <NavbarStyle>
-      <MyProfile />
-      <NavbarStatus />
-      <NavbarPeople />
-    </NavbarStyle>
-  )
 }
 
 export function MyProfile() {
