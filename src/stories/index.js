@@ -10,7 +10,7 @@ import { Welcome } from '@storybook/react/demo';
 import {Navbar, MyProfile, NavbarStatus, NavbarPeople} from '../components/Navbar'
 import {QuickAction, QuickActionText} from '../components/QuickAction'
 import {Drafts, DraftsListsItem} from '../components/Drafts'
-import CreateArticle from '../components/CreateArticle';
+import {CreateArticle, CreateArticleText, CreateArticleButton} from '../components/CreateArticle';
 import {Tags, TagsPill, PillItem} from '../components/Tags';
 import MyArticles from '../components/MyArticles';
 import ProfilePill from '../components/ProfilePill';
@@ -38,7 +38,10 @@ storiesOf('Drafts', module)
   .add('to Drafts', () => (<StoriesContainer><Drafts /></StoriesContainer>))
   .add('to DraftsItem', () => (<StoriesContainer><DraftsListsItem title="Visit Dayeuhkolot" date="22 Desember 2018" type="success"/></StoriesContainer>))
 
-storiesOf('Create Article', module).add('to CreateArticle', () => (<CreateArticle />))
+storiesOf('Create Article', module)
+  .add('to CreateArticle', () => (<StoriesContainer><CreateArticle /></StoriesContainer>))
+  .add('to CreateArticleText', () => (<StoriesContainer><CreateArticleText /></StoriesContainer>))
+  .add('to CreateArticleButton', () => (<StoriesContainer><CreateArticleButton>Hello, World!</CreateArticleButton></StoriesContainer>))
 
 storiesOf('Tags', module)
   .add('to Tags', () => (<StoriesContainer><Tags /></StoriesContainer>))
