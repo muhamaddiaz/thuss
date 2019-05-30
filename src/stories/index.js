@@ -11,7 +11,7 @@ import {Navbar, MyProfile, NavbarStatus, NavbarPeople} from '../components/Navba
 import {QuickAction, QuickActionText} from '../components/QuickAction'
 import {Drafts, DraftsListsItem} from '../components/Drafts'
 import CreateArticle from '../components/CreateArticle';
-import Tags from '../components/Tags';
+import {Tags, TagsPill, PillItem} from '../components/Tags';
 import MyArticles from '../components/MyArticles';
 import ProfilePill from '../components/ProfilePill';
 import ActivityLog from '../components/ActivityLog';
@@ -40,7 +40,10 @@ storiesOf('Drafts', module)
 
 storiesOf('Create Article', module).add('to CreateArticle', () => (<CreateArticle />))
 
-storiesOf('Tags', module).add('to Tags', () => (<Tags />))
+storiesOf('Tags', module)
+  .add('to Tags', () => (<StoriesContainer><Tags /></StoriesContainer>))
+  .add('to TagsPill', () => (<StoriesContainer><TagsPill /></StoriesContainer>))
+  .add('to PillItem', () => (<StoriesContainer><PillItem /></StoriesContainer>))
 
 storiesOf('My Articles', module).add('to MyArticles', () => (<MyArticles />))
 
